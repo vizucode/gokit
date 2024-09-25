@@ -7,23 +7,17 @@ import (
 
 	_ "github.com/go-sql-driver/mysql"
 	_ "github.com/lib/pq"
-	"gitlab.com/tixia-backend/gokit/utils/env"
+	"github.com/vizucode/gokit/utils/constant"
+	"github.com/vizucode/gokit/utils/env"
 )
 
 type OptionSQLDB func(*optionSqlDB)
-
-type Driver string
-
-const (
-	Postgres Driver = "postgres"
-	MySQL    Driver = "mysql"
-)
 
 type optionSqlDB struct {
 	uri               string
 	serviceName       string
 	databaseName      string
-	driver            Driver
+	driver            constant.Driver
 	minPoolConnection uint
 	maxPoolConnection uint
 	maxConnectionIdle time.Duration
@@ -73,7 +67,7 @@ func SetSqlURIConnection(uri string) OptionSQLDB {
 	}
 }
 
-func SetSqlDriver(driver Driver) OptionSQLDB {
+func SetSqlDriver(driver constant.Driver) OptionSQLDB {
 	return func(o *optionSqlDB) {
 		o.driver = driver
 	}

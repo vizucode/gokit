@@ -1,4 +1,4 @@
-module gitlab.com/tixia-backend/gokit
+module github.com/vizucode/gokit
 
 go 1.23.0
 
