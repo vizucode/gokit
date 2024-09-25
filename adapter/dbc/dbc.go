@@ -3,15 +3,21 @@ package dbc
 import (
 	"database/sql"
 
+	"github.com/redis/go-redis/v9"
 	"gorm.io/gorm"
 )
 
-// sqlDBC is instance for database/sql connection
-type SqlDBC struct {
+// sqlDBc is instance for database/sql connection
+type SqlDBc struct {
 	DB *sql.DB
 }
 
-// Gorm is instance for gorm connection
-type GormDBC struct {
+// GormDBc is instance for gorm connection
+type GormDBc struct {
 	DB *gorm.DB
+}
+
+// RedisDBc is instance for redis connection
+type RedisDBc struct {
+	DB *redis.Client
 }

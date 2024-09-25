@@ -34,7 +34,7 @@ func defaultSqlDbConnection() optionSqlDB {
 	}
 }
 
-func NewSqlConnection(options ...OptionSQLDB) *SqlDBC {
+func NewSqlConnection(options ...OptionSQLDB) *SqlDBc {
 	var err error
 
 	o := defaultSqlDbConnection()
@@ -56,7 +56,7 @@ func NewSqlConnection(options ...OptionSQLDB) *SqlDBC {
 		log.Fatal("failed to connect to database")
 	}
 
-	return &SqlDBC{
+	return &SqlDBc{
 		DB: dbc,
 	}
 }

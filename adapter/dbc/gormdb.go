@@ -45,7 +45,7 @@ func dialector(driver constant.Driver, dsn string) gorm.Dialector {
 	}
 }
 
-func NewGormConnection(options ...OptionsGormDB) *GormDBC {
+func NewGormConnection(options ...OptionsGormDB) *GormDBc {
 	var err error
 
 	conn := defaultGormConnection()
@@ -74,7 +74,7 @@ func NewGormConnection(options ...OptionsGormDB) *GormDBC {
 	db.SetMaxOpenConns(int(conn.maxPoolConnection))
 	db.SetConnMaxIdleTime(conn.maxIdleConnection)
 
-	return &GormDBC{
+	return &GormDBc{
 		DB: gormDB,
 	}
 }
