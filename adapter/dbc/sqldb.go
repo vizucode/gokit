@@ -23,7 +23,7 @@ type optionSqlDB struct {
 	maxConnectionIdle time.Duration
 }
 
-func defaultConnection() optionSqlDB {
+func defaultSqlDbConnection() optionSqlDB {
 	return optionSqlDB{
 		uri:               env.GetString("DB_SQL_URI"),
 		serviceName:       env.GetString("SERVICE_NAME"),
@@ -37,7 +37,7 @@ func defaultConnection() optionSqlDB {
 func NewSqlConnection(options ...OptionSQLDB) *SqlDBC {
 	var err error
 
-	o := defaultConnection()
+	o := defaultSqlDbConnection()
 	for _, option := range options {
 		option(&o)
 	}
