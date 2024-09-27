@@ -44,7 +44,7 @@ func defaultOption() option {
 // SetHTTPPort set http port
 func SetHTTPPort(httpPort int) OptionFunc {
 	return func(o *option) {
-		o.httpPort = fmt.Sprintf(":%d", httpPort)
+		o.httpPort = fmt.Sprintf("%d", httpPort)
 	}
 }
 

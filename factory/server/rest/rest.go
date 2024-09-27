@@ -33,7 +33,7 @@ func New(svc factory.ServiceFactory, opts ...OptionFunc) factory.ApplicationFact
 
 		fiberConfig = fiber.Config{
 			AppName:           svc.Name(),
-			Prefork:           false,
+			Prefork:           true,
 			ReduceMemoryUsage: true,
 		}
 	)
