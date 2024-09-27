@@ -77,7 +77,7 @@ func New(svc factory.ServiceFactory, opts ...OptionFunc) factory.ApplicationFact
 }
 
 func (r *rest) Serve() {
-	err := r.serverEngine.Listen(r.opt.httpPort)
+	err := r.serverEngine.Listen(r.opt.httpHost + ":" + r.opt.httpPort)
 
 	switch e := err.(type) {
 	case *net.OpError:

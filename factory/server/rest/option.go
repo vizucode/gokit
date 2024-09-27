@@ -17,6 +17,7 @@ type OptionFunc func(*option)
 type option struct {
 	cors         fiber.Handler
 	httpPort     string
+	httpHost     string
 	engineOption func(app *fiber.App)
 	log          *logrus.Logger
 }
@@ -24,7 +25,7 @@ type option struct {
 // defaultOption default options for rest
 func defaultOption() option {
 	return option{
-		httpPort: fmt.Sprintf(":%d", env.GetInteger("SERVER_PORT", 8080)),
+		httpPort: "8080",
 		log:      logger.Logrus(),
 		cors: cors.New(
 			cors.Config{
@@ -54,5 +55,11 @@ func SetCors(cors fiber.Handler) OptionFunc {
 func SetEngineOption(app func(*fiber.App)) OptionFunc {
 	return func(o *option) {
 		o.engineOption = app
+	}
+}
+
+func SetHTTPHost(httpHost string) OptionFunc {
+	return func(o *option) {
+		o.httpHost = httpHost
 	}
 }
