@@ -28,19 +28,31 @@ type rest struct {
 
 // New creates new handler for rest server
 func New(svc factory.ServiceFactory, opts ...OptionFunc) factory.ApplicationFactory {
-	tz := timezone.JakartaTz()
+	var (
+		tz = timezone.JakartaTz()
+
+		fiberConfig = fiber.Config{
+			AppName:           svc.Name(),
+			Prefork:           true,
+			ReduceMemoryUsage: true,
+		}
+	)
 
 	// init an instance rest handler
 	srv := &rest{
 		tz:           tz,
 		opt:          defaultOption(),
 		service:      svc,
-		serverEngine: fiber.New(fiber.Config{AppName: svc.Name()}),
+		serverEngine: fiber.New(fiberConfig),
 	}
 
 	for _, o := range opts {
 		o(&srv.opt)
 	}
+
+	// set custom fiber error handling
+	fiberConfig.ErrorHandler = srv.opt.errorHandler
+	srv.serverEngine = fiber.New(fiberConfig)
 
 	if srv.opt.engineOption != nil {
 		srv.opt.engineOption(srv.serverEngine)
@@ -59,10 +71,6 @@ func New(svc factory.ServiceFactory, opts ...OptionFunc) factory.ApplicationFact
 	// root path for http handler
 	rootPath := srv.serverEngine.Group("")
 	rootPath.Use(srv.restTraceLogger) // implement http logging
-	// register rest handler
-	if r := svc.RESTHandler(); r != nil {
-		r.Router(rootPath)
-	}
 
 	// print all routes
 	for _, route := range srv.serverEngine.GetRoutes(true) {

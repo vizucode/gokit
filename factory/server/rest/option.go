@@ -20,6 +20,9 @@ type option struct {
 	httpHost     string
 	engineOption func(app *fiber.App)
 	log          *logrus.Logger
+
+	// it's recomended to set error handling, default is fiber.DefaultErrorHandler
+	errorHandler fiber.ErrorHandler
 }
 
 // defaultOption default options for rest
@@ -34,6 +37,7 @@ func defaultOption() option {
 				AllowOrigins: env.GetString("CORS_ORIGINS", "*"),
 			},
 		),
+		errorHandler: fiber.DefaultErrorHandler,
 	}
 }
 
@@ -61,5 +65,11 @@ func SetEngineOption(app func(*fiber.App)) OptionFunc {
 func SetHTTPHost(httpHost string) OptionFunc {
 	return func(o *option) {
 		o.httpHost = httpHost
+	}
+}
+
+func SetErrorHandler(errorHandler fiber.ErrorHandler) OptionFunc {
+	return func(o *option) {
+		o.errorHandler = errorHandler
 	}
 }
