@@ -33,7 +33,7 @@ func New(svc factory.ServiceFactory, opts ...OptionFunc) factory.ApplicationFact
 
 		fiberConfig = fiber.Config{
 			AppName:           svc.Name(),
-			Prefork:           true,
+			Prefork:           false,
 			ReduceMemoryUsage: true,
 		}
 	)
@@ -53,10 +53,6 @@ func New(svc factory.ServiceFactory, opts ...OptionFunc) factory.ApplicationFact
 	// set custom fiber error handling
 	fiberConfig.ErrorHandler = srv.opt.errorHandler
 	srv.serverEngine = fiber.New(fiberConfig)
-
-	if srv.opt.engineOption != nil {
-		srv.opt.engineOption(srv.serverEngine)
-	}
 
 	// add cors middleware
 	srv.serverEngine.Use(srv.opt.cors)
