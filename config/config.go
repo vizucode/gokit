@@ -18,7 +18,6 @@ func Load(serviceName string) {
 	// load all configuration needed
 	// init viper first time
 	Config()
-
 	fmt.Println(serviceName)
 }
 
