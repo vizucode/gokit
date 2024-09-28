@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package hello;
+
+option go_package = "./protoc";
+
+// Mendefinisikan service HelloService
+service HelloService {
+    // Mendefinisikan RPC yang mengembalikan HelloResponse
+    rpc SayHello(HelloRequest) returns (HelloResponse);
+}
+
+// Mendefinisikan pesan permintaan
+message HelloRequest {
+    string name = 1; // Nama yang akan digunakan dalam respons
+}
+
+// Mendefinisikan pesan respons
+message HelloResponse {
+    string message = 1; // Pesan yang berisi "Hello World"
+}

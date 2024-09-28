@@ -2,6 +2,10 @@
 
 GOKIT project aims to support fast-driven application development using the creational pattern with the factory method. GOKIT provides a structured way to build and manage services, making it easy to integrate with other services, and it is implemented with a standardized OpenTelemetry observer.
 
+## User Guide
+
+Please check our example on folder example to start using GOKIT
+
 ## Feature Builded
 [v] **Adapter** Already supported databases (sql/db, gorm, redis)
 
