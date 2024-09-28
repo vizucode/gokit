@@ -114,3 +114,21 @@ func Response(ctx context.Context, status int, res interface{}, err error) {
 		value.Set(_ErrorMessage, err.Error())
 	}
 }
+
+// convertInterfaceToString for getting all request from payload body grpc
+func convertInterfaceToString(i interface{}) string {
+	// var reqBody = make(map[string]interface{})
+	// extract all payload
+	buf, err := json.Marshal(i)
+	if err != nil {
+		return ""
+	}
+
+	// set data to map
+	// err = json.Unmarshal(buf, &reqBody)
+	// if err != nil {
+	// 	return reqBody
+	// }
+
+	return string(buf)
+}
