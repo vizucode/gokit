@@ -12,6 +12,7 @@ type OptionFunc func(*option)
 // option grpc
 type option struct {
 	tcpPort string
+	tcpHost string
 }
 
 func defaultOption() option {
@@ -23,6 +24,12 @@ func defaultOption() option {
 // SetTCPPort set tcp port
 func SetTCPPort(port int) OptionFunc {
 	return func(o *option) {
-		o.tcpPort = fmt.Sprintf(":%d", port)
+		o.tcpPort = fmt.Sprintf("%d", port)
+	}
+}
+
+func SetTCPHost(host string) OptionFunc {
+	return func(o *option) {
+		o.tcpHost = host
 	}
 }

@@ -69,7 +69,9 @@ func New(svc factory.ServiceFactory, opts ...OptionFunc) factory.ApplicationFact
 	rootPath.Use(srv.restTraceLogger) // implement http logging
 
 	// apply handler to root path
-	svc.RESTHandler().Router(rootPath)
+	if h := svc.RESTHandler(); h != nil {
+		h.Router(rootPath)
+	}
 
 	// print all routes
 	for _, route := range srv.serverEngine.GetRoutes(true) {
