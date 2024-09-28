@@ -109,6 +109,11 @@ func (otlp *otplTracePlatform) Tags() (resp map[string]interface{}) {
 }
 
 func (otlp *otplTracePlatform) SetTag(key string, value interface{}) {
+
+	if otlp == nil {
+		return
+	}
+
 	if otlp.span == nil {
 		return
 	}

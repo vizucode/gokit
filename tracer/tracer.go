@@ -61,7 +61,7 @@ func StartTraceWithContext(ctx context.Context, operationName string) (Tracer, c
 	t := StartTrace(ctx, operationName)
 
 	if t == nil {
-		return nil, ctx
+		return new(otplTracePlatform), ctx
 	}
 
 	return t, t.Context()

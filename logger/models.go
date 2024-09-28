@@ -49,6 +49,7 @@ type DataLogger struct {
 	RequestId     string       `json:"request_id"`
 	UserCode      string       `json:"user_code"`
 	Device        string       `json:"device"`
+	Ip            string       `json:"ip"`
 	Type          ServiceType  `json:"type"`
 	TimeStart     time.Time    `json:"time_start"`
 	Service       string       `json:"service"`
