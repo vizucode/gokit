@@ -60,6 +60,10 @@ func StartTrace(ctx context.Context, operationName string) Tracer {
 func StartTraceWithContext(ctx context.Context, operationName string) (Tracer, context.Context) {
 	t := StartTrace(ctx, operationName)
 
+	if t == nil {
+		return nil, ctx
+	}
+
 	return t, t.Context()
 }
 
