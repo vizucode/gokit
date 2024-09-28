@@ -36,6 +36,8 @@ func (r *rest) restTraceLogger(c *fiber.Ctx) error {
 	// init logger
 	dl := logger.DataLogger{
 		RequestId:     requestId,
+		Ip:            c.IP(),
+		Device:        c.Get("user-agent"),
 		Type:          logger.ServiceType("rest_api"),
 		TimeStart:     start,
 		Service:       r.service.Name(),

@@ -33,7 +33,7 @@ func New(svc factory.ServiceFactory, opts ...OptionFunc) factory.ApplicationFact
 
 		fiberConfig = fiber.Config{
 			AppName:           svc.Name(),
-			Prefork:           true,
+			Prefork:           false,
 			ReduceMemoryUsage: true,
 		}
 	)
@@ -54,10 +54,6 @@ func New(svc factory.ServiceFactory, opts ...OptionFunc) factory.ApplicationFact
 	fiberConfig.ErrorHandler = srv.opt.errorHandler
 	srv.serverEngine = fiber.New(fiberConfig)
 
-	if srv.opt.engineOption != nil {
-		srv.opt.engineOption(srv.serverEngine)
-	}
-
 	// add cors middleware
 	srv.serverEngine.Use(srv.opt.cors)
 	// start handler for health-check
@@ -71,6 +67,11 @@ func New(svc factory.ServiceFactory, opts ...OptionFunc) factory.ApplicationFact
 	// root path for http handler
 	rootPath := srv.serverEngine.Group("")
 	rootPath.Use(srv.restTraceLogger) // implement http logging
+
+	// apply handler to root path
+	if h := svc.RESTHandler(); h != nil {
+		h.Router(rootPath)
+	}
 
 	// print all routes
 	for _, route := range srv.serverEngine.GetRoutes(true) {

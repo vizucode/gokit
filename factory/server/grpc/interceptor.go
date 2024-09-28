@@ -11,7 +11,7 @@ import (
 	"github.com/vizucode/gokit/tracer"
 	"github.com/vizucode/gokit/types"
 	"github.com/vizucode/gokit/utils/convert"
-	errs "github.com/vizucode/gokit/utils/errors"
+	"github.com/vizucode/gokit/utils/errorkit"
 	"github.com/vizucode/gokit/utils/monitoring"
 
 	"google.golang.org/grpc"
@@ -80,7 +80,7 @@ func (i *interceptor) unaryServerTracerInterceptor(
 		var sc = http.StatusOK
 		if err != nil {
 			switch er := err.(type) {
-			case *errs.ErrorResponse:
+			case *errorkit.ErrorResponse:
 				sc = er.StatusCode()
 			default:
 				c := status.Code(err)

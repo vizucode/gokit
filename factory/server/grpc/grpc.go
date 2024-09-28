@@ -57,9 +57,9 @@ func New(svc factory.ServiceFactory, opts ...OptionFunc) factory.ApplicationFact
 		opt(&srv.opt)
 	}
 
-	port := srv.opt.tcpPort
+	tcpURI := srv.opt.tcpHost + ":" + srv.opt.tcpPort
 	var err error
-	srv.listener, err = net.Listen("tcp", port)
+	srv.listener, err = net.Listen("tcp", tcpURI)
 	if err != nil {
 		panic(err)
 	}
@@ -75,7 +75,7 @@ func New(svc factory.ServiceFactory, opts ...OptionFunc) factory.ApplicationFact
 		}
 	}
 
-	logger.GreenBold(fmt.Sprintf("⇨ GRPC server run at port [::]%s\n", port))
+	logger.GreenBold(fmt.Sprintf("⇨ GRPC server run at %s\n", tcpURI))
 	return srv
 }
 
