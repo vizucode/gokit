@@ -1,4 +1,4 @@
-package errors
+package errorkit
 
 const (
 	// Server Errors
