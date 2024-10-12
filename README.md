@@ -6,6 +6,20 @@ GOKIT project aims to support fast-driven application development using the crea
 
 Please check our example on folder example to start using GOKIT
 
+## Getting Started
+
+To get started with GOKIT, clone the repository and check out the examples in the `example` folder.
+
+```bash
+git clone https://github.com/vizucode/gokit.git
+cd gokit/example
+```
+
+Or, you just wan't add to your existing apps, just add
+```bash
+go get github.com/vizucode/gokit
+```
+
 ## Feature Builded
 [v] **Adapter** Already supported databases (sql/db, gorm, redis)
 
