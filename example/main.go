@@ -193,7 +193,7 @@ func main() {
 
 	serviceName := "TestingGoKit"
 
-	config.Load(serviceName)
+	config.Load(serviceName, ".")
 
 	apiClient := request.NewRequest(&http.Client{
 		Timeout: 5 * time.Second,
