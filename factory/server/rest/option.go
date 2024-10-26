@@ -4,10 +4,8 @@ import (
 	"fmt"
 
 	"github.com/gofiber/fiber/v2"
-	"github.com/gofiber/fiber/v2/middleware/cors"
 	"github.com/sirupsen/logrus"
 	"github.com/vizucode/gokit/logger"
-	"github.com/vizucode/gokit/utils/env"
 )
 
 // OptionFunc setter rest options
@@ -30,13 +28,9 @@ func defaultOption() option {
 	return option{
 		httpPort: "8080",
 		log:      logger.Logrus(),
-		cors: cors.New(
-			cors.Config{
-				AllowHeaders: env.GetString("CORS_HEADERS", "X-App-Version,X-Api-Key,Authorization,Content-Type"),
-				AllowMethods: env.GetString("CORS_METHODS", "GET,PUT,POST,DELETE,OPTION"),
-				AllowOrigins: env.GetString("CORS_ORIGINS", "*"),
-			},
-		),
+		cors: func(c *fiber.Ctx) error {
+			return c.Next()
+		},
 		errorHandler: fiber.DefaultErrorHandler,
 	}
 }
