@@ -9,7 +9,6 @@ import (
 	"time"
 
 	"github.com/gofiber/fiber/v2"
-	"github.com/redis/go-redis/v9"
 	"github.com/vizucode/gokit/adapter/dbc"
 	"github.com/vizucode/gokit/config"
 	"github.com/vizucode/gokit/factory/server"
@@ -30,11 +29,11 @@ type restRoute struct {
 
 	GORM  *gorm.DB
 	SQLDB *sql.DB
-	REDIS *redis.Client
+	REDIS dbc.CacheClient
 	API   request.Client
 }
 
-func NewHandler(gormDB *gorm.DB, sqlDB *sql.DB, redis *redis.Client, apiClient request.Client) *restRoute {
+func NewHandler(gormDB *gorm.DB, sqlDB *sql.DB, redis dbc.CacheClient, apiClient request.Client) *restRoute {
 	return &restRoute{
 		GORM:  gormDB,
 		SQLDB: sqlDB,

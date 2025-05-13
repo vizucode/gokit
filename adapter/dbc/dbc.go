@@ -1,7 +1,9 @@
 package dbc
 
 import (
+	"context"
 	"database/sql"
+	"time"
 
 	"github.com/redis/go-redis/v9"
 	"gorm.io/gorm"
@@ -19,6 +21,11 @@ type GormDBc struct {
 
 // RedisDBc is instance for redis connection
 type RedisDBc struct {
-	DB      *redis.Client
-	Cluster *redis.ClusterClient
+	DB CacheClient
+}
+
+// Redis standard interface for abstract redis
+type CacheClient interface {
+	Get(ctx context.Context, key string) *redis.StringCmd
+	Set(ctx context.Context, key string, value interface{}, expiration time.Duration) *redis.StatusCmd
 }

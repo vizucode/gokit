@@ -72,7 +72,7 @@ func NewRedisClusterConnection(options ...OptionRedisCluster) *RedisDBc {
 	}
 
 	return &RedisDBc{
-		Cluster: rediscli,
+		DB: rediscli,
 	}
 }
 
