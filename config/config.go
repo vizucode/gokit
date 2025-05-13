@@ -1,6 +1,8 @@
 package config
 
 import (
+	"log"
+
 	"github.com/spf13/viper"
 )
 
@@ -22,5 +24,8 @@ func Config(configPath string) {
 	viper.SetConfigFile(".env")
 	viper.SetConfigName("env")
 
-	viper.ReadInConfig()
+	err := viper.ReadInConfig()
+	if err == nil {
+		log.Print("Config file loaded")
+	}
 }

@@ -19,5 +19,6 @@ type GormDBc struct {
 
 // RedisDBc is instance for redis connection
 type RedisDBc struct {
-	DB *redis.Client
+	DB      *redis.Client
+	Cluster *redis.ClusterClient
 }
