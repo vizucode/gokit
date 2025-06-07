@@ -3,9 +3,9 @@ package rest
 import (
 	"fmt"
 
-	"github.com/TixiaOTA/gokit/logger"
 	"github.com/gofiber/fiber/v2"
 	"github.com/sirupsen/logrus"
+	"github.com/vizucode/gokit/logger"
 )
 
 // OptionFunc setter rest options

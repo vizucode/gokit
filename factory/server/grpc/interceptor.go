@@ -7,12 +7,12 @@ import (
 	"net/http"
 	"time"
 
-	"github.com/TixiaOTA/gokit/logger"
-	"github.com/TixiaOTA/gokit/tracer"
-	"github.com/TixiaOTA/gokit/types"
-	"github.com/TixiaOTA/gokit/utils/convert"
-	"github.com/TixiaOTA/gokit/utils/errorkit"
-	"github.com/TixiaOTA/gokit/utils/monitoring"
+	"github.com/vizucode/gokit/logger"
+	"github.com/vizucode/gokit/tracer"
+	"github.com/vizucode/gokit/types"
+	"github.com/vizucode/gokit/utils/convert"
+	"github.com/vizucode/gokit/utils/errorkit"
+	"github.com/vizucode/gokit/utils/monitoring"
 
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"

@@ -9,11 +9,11 @@ import (
 	"strings"
 	"time"
 
-	"github.com/TixiaOTA/gokit/logger"
-	"github.com/TixiaOTA/gokit/tracer"
-	"github.com/TixiaOTA/gokit/utils/timezone"
 	"github.com/gofiber/fiber/v2"
 	"github.com/google/uuid"
+	"github.com/vizucode/gokit/logger"
+	"github.com/vizucode/gokit/tracer"
+	"github.com/vizucode/gokit/utils/timezone"
 )
 
 func (r *rest) restTraceLogger(c *fiber.Ctx) error {

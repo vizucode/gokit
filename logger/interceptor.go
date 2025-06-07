@@ -6,8 +6,8 @@ import (
 	"net/http"
 	"time"
 
-	"github.com/TixiaOTA/gokit/tracer"
-	"github.com/TixiaOTA/gokit/utils/monitoring"
+	"github.com/vizucode/gokit/tracer"
+	"github.com/vizucode/gokit/utils/monitoring"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/status"

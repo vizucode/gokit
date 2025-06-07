@@ -1,8 +1,8 @@
 package factory
 
 import (
-	"github.com/TixiaOTA/gokit/abstract"
-	"github.com/TixiaOTA/gokit/types"
+	"github.com/vizucode/gokit/abstract"
+	"github.com/vizucode/gokit/types"
 )
 
 // ServiceFactory abstraction of service

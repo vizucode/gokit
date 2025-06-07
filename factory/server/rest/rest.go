@@ -8,14 +8,14 @@ import (
 	"strings"
 	"time"
 
-	"github.com/TixiaOTA/gokit/factory"
-	"github.com/TixiaOTA/gokit/logger"
-	"github.com/TixiaOTA/gokit/types"
-	"github.com/TixiaOTA/gokit/utils/timezone"
 	"github.com/gofiber/fiber/v2"
 	"github.com/gofiber/fiber/v2/middleware/adaptor"
 	"github.com/hellofresh/health-go/v4"
 	"github.com/prometheus/client_golang/prometheus/promhttp"
+	"github.com/vizucode/gokit/factory"
+	"github.com/vizucode/gokit/logger"
+	"github.com/vizucode/gokit/types"
+	"github.com/vizucode/gokit/utils/timezone"
 )
 
 // rest an instance of rest handler

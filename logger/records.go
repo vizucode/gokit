@@ -10,8 +10,8 @@ import (
 	"runtime"
 	"time"
 
-	"github.com/TixiaOTA/gokit/utils/timezone"
 	"github.com/google/uuid"
+	"github.com/vizucode/gokit/utils/timezone"
 )
 
 // InitializeCron for init first context from scheduler

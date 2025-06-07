@@ -11,13 +11,13 @@ Please check our example on folder example to start using GOKIT
 To get started with GOKIT, clone the repository and check out the examples in the `example` folder.
 
 ```bash
-git clone https://github.com/TixiaOTA/gokit.git
+git clone https://github.com/vizucode/gokit.git
 cd gokit/example
 ```
 
 Or, you just wan't add to your existing apps, just add
 ```bash
-go get github.com/TixiaOTA/gokit
+go get github.com/vizucode/gokit
 ```
 
 ## Feature Builded

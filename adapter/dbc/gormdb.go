@@ -3,8 +3,8 @@ package dbc
 import (
 	"time"
 
-	"github.com/TixiaOTA/gokit/utils/constant"
-	"github.com/TixiaOTA/gokit/utils/env"
+	"github.com/vizucode/gokit/utils/constant"
+	"github.com/vizucode/gokit/utils/env"
 	"gorm.io/driver/mysql"
 	"gorm.io/driver/postgres"
 	"gorm.io/gorm"

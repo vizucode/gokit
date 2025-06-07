@@ -3,7 +3,7 @@ package grpc
 import (
 	"fmt"
 
-	"github.com/TixiaOTA/gokit/utils/env"
+	"github.com/vizucode/gokit/utils/env"
 )
 
 // OptionFunc setter to set grpc option

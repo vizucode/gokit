@@ -1,6 +1,6 @@
 package abstract
 
-import "github.com/TixiaOTA/gokit/types"
+import "github.com/vizucode/gokit/types"
 
 // Broker message broker abstraction
 type Broker interface {

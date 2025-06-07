@@ -9,13 +9,13 @@ import (
 	"sync"
 	"time"
 
-	"github.com/TixiaOTA/gokit/factory"
-	"github.com/TixiaOTA/gokit/logger"
-	"github.com/TixiaOTA/gokit/tracer"
-	"github.com/TixiaOTA/gokit/types"
-	"github.com/TixiaOTA/gokit/utils/convert"
-	"github.com/TixiaOTA/gokit/utils/timezone"
 	"github.com/google/uuid"
+	"github.com/vizucode/gokit/factory"
+	"github.com/vizucode/gokit/logger"
+	"github.com/vizucode/gokit/tracer"
+	"github.com/vizucode/gokit/types"
+	"github.com/vizucode/gokit/utils/convert"
+	"github.com/vizucode/gokit/utils/timezone"
 
 	"github.com/streadway/amqp"
 )

@@ -9,10 +9,10 @@ import (
 	"strings"
 	"time"
 
-	"github.com/TixiaOTA/gokit/logger"
-	"github.com/TixiaOTA/gokit/tracer"
-	"github.com/TixiaOTA/gokit/utils/monitoring"
-	"github.com/TixiaOTA/gokit/utils/timezone"
+	"github.com/vizucode/gokit/logger"
+	"github.com/vizucode/gokit/tracer"
+	"github.com/vizucode/gokit/utils/monitoring"
+	"github.com/vizucode/gokit/utils/timezone"
 )
 
 func (r *request) wrapper(ctx context.Context, payload []byte, method string) ([]byte, int, error) {

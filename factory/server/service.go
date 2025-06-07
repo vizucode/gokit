@@ -1,12 +1,12 @@
 package server
 
 import (
-	"github.com/TixiaOTA/gokit/abstract"
-	"github.com/TixiaOTA/gokit/factory"
-	"github.com/TixiaOTA/gokit/factory/server/grpc"
-	"github.com/TixiaOTA/gokit/factory/server/rabbitmq"
-	"github.com/TixiaOTA/gokit/factory/server/rest"
-	"github.com/TixiaOTA/gokit/types"
+	"github.com/vizucode/gokit/abstract"
+	"github.com/vizucode/gokit/factory"
+	"github.com/vizucode/gokit/factory/server/grpc"
+	"github.com/vizucode/gokit/factory/server/rabbitmq"
+	"github.com/vizucode/gokit/factory/server/rest"
+	"github.com/vizucode/gokit/types"
 )
 
 // ServiceFunc setter to set service instance

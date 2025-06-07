@@ -5,10 +5,10 @@ import (
 	"log"
 	"time"
 
-	"github.com/TixiaOTA/gokit/utils/constant"
-	"github.com/TixiaOTA/gokit/utils/env"
 	_ "github.com/go-sql-driver/mysql"
 	_ "github.com/lib/pq"
+	"github.com/vizucode/gokit/utils/constant"
+	"github.com/vizucode/gokit/utils/env"
 )
 
 type OptionSQLDB func(*optionSqlDB)

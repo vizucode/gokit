@@ -7,10 +7,10 @@ import (
 	"net"
 	"time"
 
-	"github.com/TixiaOTA/gokit/factory"
-	"github.com/TixiaOTA/gokit/logger"
-	"github.com/TixiaOTA/gokit/types"
-	"github.com/TixiaOTA/gokit/utils/env"
+	"github.com/vizucode/gokit/factory"
+	"github.com/vizucode/gokit/logger"
+	"github.com/vizucode/gokit/types"
+	"github.com/vizucode/gokit/utils/env"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/keepalive"
 )

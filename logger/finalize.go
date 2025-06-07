@@ -6,9 +6,9 @@ import (
 	"strings"
 	"time"
 
-	"github.com/TixiaOTA/gokit/utils/env"
-	"github.com/TixiaOTA/gokit/utils/monitoring"
 	"github.com/sirupsen/logrus"
+	"github.com/vizucode/gokit/utils/env"
+	"github.com/vizucode/gokit/utils/monitoring"
 )
 
 // Finalize load from context and delete data context

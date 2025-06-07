@@ -5,8 +5,8 @@ import (
 	"crypto/tls"
 	"time"
 
-	"github.com/TixiaOTA/gokit/utils/env"
 	goredis "github.com/redis/go-redis/v9"
+	"github.com/vizucode/gokit/utils/env"
 )
 
 type OptionRedis func(o *optionRedis)

@@ -1,8 +1,8 @@
 package abstract
 
 import (
-	"github.com/TixiaOTA/gokit/types"
 	"github.com/gofiber/fiber/v2"
+	"github.com/vizucode/gokit/types"
 	"google.golang.org/grpc"
 )
 

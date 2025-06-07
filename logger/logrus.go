@@ -1,8 +1,8 @@
 package logger
 
 import (
-	"github.com/TixiaOTA/gokit/utils/timezone"
 	"github.com/sirupsen/logrus"
+	"github.com/vizucode/gokit/utils/timezone"
 )
 
 const layoutDateTime = "2006-01-02T15:04:05-07:00"
